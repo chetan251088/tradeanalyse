@@ -1,0 +1,10 @@
+underlying,day,expiry_day,rows,wrong_strike,no_trade,kept,atm_cov,oi_cov,status,alerts
+NIFTY,2026-10-06,True,15792,0,138,15612,1.0,1.0,used,6
+NIFTY,2026-10-13,True,15792,0,169,15581,1.0,1.0,used,5
+NIFTY,2026-10-19,True,15789,0,90,15657,1.0,1.0,used,4
+NIFTY,2026-10-27,True,15792,0,141,15609,1.0,1.0,used,5
+SENSEX,2026-10-01,True,15683,0,36,15605,1.0,1.0,used,2
+SENSEX,2026-10-08,True,15761,0,57,15662,1.0,1.0,used,4
+SENSEX,2026-10-15,True,15761,0,31,15688,1.0,1.0,used,4
+SENSEX,2026-10-22,True,15792,0,9,15741,1.0,1.0,used,4
+SENSEX,2026-10-29,True,15792,0,21,15729,1.0,1.0,used,5
