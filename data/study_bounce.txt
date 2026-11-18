@@ -1,0 +1,34 @@
+
+######## NIFTY: expiry days, t0 13:30, puts down >= 60% since 09:20
+A. index after 13:30 | all expiry days: n 261 | lower at 15:25 50% | avg rest-of-day +2.5 bps | median pullback -19 bps | median further rise 17 bps
+A. index after 13:30 | days up >= 0.3% at 13:30: n 53 | lower at 15:25 43% | avg rest-of-day +9.2 bps | median pullback -15 bps | median further rise 25 bps
+B. buy the collapsed put at the ask at t0 (each day counted once):
+   all days        OTM      test  days  91 puts  325 | reached 1.5x  27% 2x  17% | hold to 15:20 -97% | 2x/-50% plan -34% (t -6.5, win 13%) | median entry Rs 2.0
+   all days        OTM      train days  81 puts  258 | reached 1.5x  28% 2x  16% | hold to 15:20 -81% | 2x/-50% plan -37% (t -7.4, win 14%) | median entry Rs 1.8
+   all days        near ATM test  days  81 puts  233 | reached 1.5x  47% 2x  33% | hold to 15:20 -52% | 2x/-50% plan -14% (t -2.1, win 26%) | median entry Rs 12.3
+   all days        near ATM train days  81 puts  225 | reached 1.5x  47% 2x  32% | hold to 15:20 -34% | 2x/-50% plan -15% (t -2.1, win 26%) | median entry Rs 10.0
+   all days        ITM      test  days   4 puts    4 | reached 1.5x  50% 2x  25% | hold to 15:20 -1% | 2x/-50% plan +7% (t +0.2, win 50%) | median entry Rs 151.3
+   all days        ITM      train days   4 puts    4 | reached 1.5x  50% 2x  25% | hold to 15:20 +11% | 2x/-50% plan -18% (t -1.0, win 50%) | median entry Rs 134.3
+   rally days only OTM      test  days  24 puts  134 | reached 1.5x  16% 2x  10% | hold to 15:20 -96% | 2x/-50% plan -41% (t -4.8, win 8%) | median entry Rs 2.2
+   rally days only OTM      train days  25 puts  101 | reached 1.5x  20% 2x  15% | hold to 15:20 -99% | 2x/-50% plan -36% (t -4.0, win 10%) | median entry Rs 1.9
+   rally days only near ATM test  days  23 puts  100 | reached 1.5x  42% 2x  31% | hold to 15:20 -30% | 2x/-50% plan -14% (t -1.2, win 26%) | median entry Rs 31.3
+   rally days only near ATM train days  28 puts  104 | reached 1.5x  44% 2x  33% | hold to 15:20 -50% | 2x/-50% plan -16% (t -1.4, win 24%) | median entry Rs 16.6
+   rally days only ITM      test  days   4 puts    4 | reached 1.5x  50% 2x  25% | hold to 15:20 -1% | 2x/-50% plan +7% (t +0.2, win 50%) | median entry Rs 151.3
+   rally days only ITM      train days   4 puts    4 | reached 1.5x  50% 2x  25% | hold to 15:20 +11% | 2x/-50% plan -18% (t -1.0, win 50%) | median entry Rs 134.3
+
+######## SENSEX: expiry days, t0 13:30, puts down >= 60% since 09:20
+A. index after 13:30 | all expiry days: n 135 | lower at 15:25 51% | avg rest-of-day -2.1 bps | median pullback -18 bps | median further rise 17 bps
+A. index after 13:30 | days up >= 0.3% at 13:30: n 32 | lower at 15:25 41% | avg rest-of-day +9.9 bps | median pullback -15 bps | median further rise 24 bps
+B. buy the collapsed put at the ask at t0 (each day counted once):
+   all days        OTM      test  days  91 puts  610 | reached 1.5x  31% 2x  20% | hold to 15:20 -82% | 2x/-50% plan -28% (t -5.4, win 15%) | median entry Rs 7.2
+   all days        OTM      train days   9 puts   61 | reached 1.5x  23% 2x  15% | hold to 15:20 -100% | 2x/-50% plan -45% (t -7.4, win 5%) | median entry Rs 10.0
+   all days        near ATM test  days  81 puts  263 | reached 1.5x  50% 2x  35% | hold to 15:20 -3% | 2x/-50% plan -2% (t -0.3, win 30%) | median entry Rs 59.3
+   all days        near ATM train days   7 puts   24 | reached 1.5x  29% 2x   4% | hold to 15:20 -87% | 2x/-50% plan -42% (t -6.0, win 4%) | median entry Rs 93.9
+   all days        ITM      test  days  10 puts   11 | reached 1.5x  45% 2x  36% | hold to 15:20 +25% | 2x/-50% plan -2% (t -0.1, win 36%) | median entry Rs 318.8
+   all days        ITM      train days   1 puts    1 | reached 1.5x   0% 2x   0% | hold to 15:20 -100% | 2x/-50% plan -50% (t +nan, win 0%) | median entry Rs 372.8
+   rally days only OTM      test  days  29 puts  206 | reached 1.5x  30% 2x  19% | hold to 15:20 -93% | 2x/-50% plan -36% (t -4.7, win 11%) | median entry Rs 9.9
+   rally days only OTM      train days   2 puts    9 | reached 1.5x   0% 2x   0% | hold to 15:20 -99% | 2x/-50% plan -50% (t +nan, win 0%) | median entry Rs 53.8
+   rally days only near ATM test  days  29 puts  118 | reached 1.5x  42% 2x  32% | hold to 15:20 -20% | 2x/-50% plan -14% (t -1.3, win 25%) | median entry Rs 109.1
+   rally days only near ATM train days   2 puts    6 | reached 1.5x   0% 2x   0% | hold to 15:20 -100% | 2x/-50% plan -50% (t +nan, win 0%) | median entry Rs 163.6
+   rally days only ITM      test  days   9 puts   10 | reached 1.5x  50% 2x  40% | hold to 15:20 +27% | 2x/-50% plan -2% (t -0.1, win 30%) | median entry Rs 320.6
+   rally days only ITM      train days   1 puts    1 | reached 1.5x   0% 2x   0% | hold to 15:20 -100% | 2x/-50% plan -50% (t +nan, win 0%) | median entry Rs 372.8

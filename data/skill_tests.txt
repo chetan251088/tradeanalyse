@@ -1,0 +1,60 @@
+
+######## NIFTY: 1234 full sessions
+1. Opening-range breakout (index R, flat 15:20):
+   stop mid target 1R     test  n  569  avg -0.040  t -0.99  win 48%  stop 48% target 44%
+   stop mid target 1R     train n  647  avg +0.026  t +0.68  win 51%  stop 47% target 49%
+   stop mid target 2R     test  n  569  avg -0.010  t -0.19  win 38%  stop 57% target 24%
+   stop mid target 2R     train n  647  avg +0.067  t +1.27  win 39%  stop 57% target 28%
+   stop range target 1R   test  n  569  avg -0.001  t -0.01  win 51%  stop 35% target 34%
+   stop range target 1R   train n  647  avg +0.024  t +0.67  win 52%  stop 38% target 38%
+2. Daily setups (bull flag uses 4% / 2%: index-sized, not the stock pack's 10% / 5%), forward bps:
+   all days         train next day   +4.5  next 5 days  +22.8  (n 656)
+   all days         test  next day   -0.8  next 5 days   -5.2  (n 578)
+   breakout_20d     train next day   +9.6  next 5 days  +28.3 (t +1.91)  n 121
+   breakout_20d     test  next day   +1.4  next 5 days  -35.5 (t -2.03)  n 73
+   bull_flag        train next day  +25.1  next 5 days  +59.3 (t +1.38)  n 41
+   bull_flag        test  next day  -20.6  next 5 days  -47.2 (t -1.14)  n 17
+   reclaim_ma20     train next day  +16.7  next 5 days  +50.2 (t +1.37)  n 32
+   reclaim_ma20     test  next day  +12.1  next 5 days  +54.9 (t +1.91)  n 28
+   oversold_rsi30   train next day  +47.8  next 5 days +131.4 (t +3.87)  n 14
+   oversold_rsi30   test  next day  +20.8  next 5 days  +30.7 (t +0.99)  n 32
+   oversold_bounce  train next day +114.5  next 5 days  +98.2 (t +1.35)  n 8
+   oversold_bounce  test  next day  +21.2  next 5 days  -35.4 (t -0.86)  n 19
+3. Time machine 'target first' odds (2,000 replays, seed 19) vs what the trade really did:
+   odds low  (0.40) test  n  195  avg -0.077  t -1.14  win 46%
+   odds low  (0.41) train n  210  avg +0.059  t +0.88  win 53%
+   odds mid  (0.49) test  n  204  avg +0.006  t +0.08  win 51%
+   odds mid  (0.49) train n  189  avg +0.024  t +0.33  win 51%
+   odds high (0.53) test  n  170  avg -0.052  t -0.70  win 48%
+   odds high (0.53) train n  228  avg -0.001  t -0.01  win 50%
+   correlation between the odds and the realised R: -0.032
+
+######## SENSEX: 1232 full sessions
+1. Opening-range breakout (index R, flat 15:20):
+   stop mid target 1R     test  n  566  avg -0.050  t -1.24  win 48%  stop 48% target 43%
+   stop mid target 1R     train n  646  avg +0.023  t +0.60  win 51%  stop 46% target 49%
+   stop mid target 2R     test  n  566  avg +0.023  t +0.43  win 40%  stop 54% target 23%
+   stop mid target 2R     train n  646  avg +0.071  t +1.35  win 39%  stop 57% target 28%
+   stop range target 1R   test  n  566  avg -0.003  t -0.09  win 51%  stop 33% target 31%
+   stop range target 1R   train n  646  avg +0.012  t +0.33  win 51%  stop 37% target 37%
+2. Daily setups (bull flag uses 4% / 2%: index-sized, not the stock pack's 10% / 5%), forward bps:
+   all days         train next day   +4.2  next 5 days  +21.5  (n 654)
+   all days         test  next day   -1.1  next 5 days   -6.8  (n 578)
+   breakout_20d     train next day   +8.9  next 5 days  +18.6 (t +1.25)  n 123
+   breakout_20d     test  next day   +4.9  next 5 days  -51.7 (t -2.79)  n 74
+   bull_flag        train next day  +29.3  next 5 days  +50.3 (t +1.11)  n 41
+   bull_flag        test  next day   -0.7  next 5 days  -42.4 (t -0.94)  n 22
+   reclaim_ma20     train next day   +4.4  next 5 days  +41.5 (t +1.15)  n 32
+   reclaim_ma20     test  next day   +4.0  next 5 days  +10.6 (t +0.31)  n 27
+   oversold_rsi30   train next day  +29.7  next 5 days  +41.5 (t +0.80)  n 20
+   oversold_rsi30   test  next day  +33.7  next 5 days   -5.6 (t -0.18)  n 31
+   oversold_bounce  train next day  +33.0  next 5 days  +30.7 (t +0.43)  n 11
+   oversold_bounce  test  next day   +2.3  next 5 days  -86.6 (t -1.84)  n 20
+3. Time machine 'target first' odds (2,000 replays, seed 19) vs what the trade really did:
+   odds low  (0.38) test  n  203  avg -0.049  t -0.75  win 48%
+   odds low  (0.41) train n  198  avg +0.052  t +0.76  win 52%
+   odds mid  (0.49) test  n  203  avg -0.011  t -0.15  win 49%
+   odds mid  (0.49) train n  198  avg +0.027  t +0.39  win 51%
+   odds high (0.53) test  n  160  avg -0.101  t -1.31  win 46%
+   odds high (0.53) train n  230  avg +0.002  t +0.03  win 50%
+   correlation between the odds and the realised R: -0.013

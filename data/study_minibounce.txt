@@ -1,0 +1,102 @@
+
+######## NIFTY: fallen options on expiry days, 5 lots, avg return per trade (day-weighted)
+every 5 min: trades train 2499 / test 2536 | median premium Rs 21.5 | bid reached +15% within 20 min: 59%
+    5 min        train  -3.3% t -6.6 win  40% | test  -3.7% t -5.2 win  37%
+    10 min       train  -3.6% t -4.7 win  38% | test  -3.6% t -3.4 win  37%
+    15 min       train  -4.6% t -4.5 win  36% | test  -5.8% t -4.9 win  34%
+    +10/-10 10m  train  -3.3% t-15.7 win  41% | test  -3.3% t-15.4 win  41%
+    +20/-10 15m  train  -3.3% t-11.3 win  29% | test  -3.4% t-12.3 win  28%
+    +20/-15 20m  train  -4.3% t-11.7 win  36% | test  -4.3% t-11.8 win  35%
+flush: trades train 1632 / test 1665 | median premium Rs 12.6 | bid reached +15% within 20 min: 61%
+    5 min        train  -5.4% t -8.0 win  39% | test  -4.1% t -5.1 win  38%
+    10 min       train  -6.4% t -5.3 win  37% | test  -4.3% t -3.0 win  35%
+    15 min       train  -8.3% t -6.3 win  35% | test  -6.6% t -3.6 win  33%
+    +10/-10 10m  train  -4.2% t-16.5 win  39% | test  -4.1% t-13.7 win  40%
+    +20/-10 15m  train  -3.9% t-11.2 win  28% | test  -4.2% t-10.8 win  27%
+    +20/-15 20m  train  -4.3% t -9.6 win  37% | test  -4.9% t-10.9 win  35%
+turn: trades train 1236 / test 1365 | median premium Rs 15.6 | bid reached +15% within 20 min: 57%
+    5 min        train  -4.1% t -5.8 win  38% | test  -3.8% t -4.3 win  35%
+    10 min       train  -4.7% t -4.3 win  37% | test  -5.4% t -3.8 win  33%
+    15 min       train  -4.8% t -3.7 win  36% | test  -6.4% t -3.6 win  32%
+    +10/-10 10m  train  -3.6% t-11.0 win  41% | test  -3.6% t-13.5 win  41%
+    +20/-10 15m  train  -3.9% t -9.2 win  28% | test  -3.7% t-10.5 win  29%
+    +20/-15 20m  train  -4.6% t -8.3 win  36% | test  -4.6% t -9.9 win  36%
+flush+turn: trades train 1033 / test 1107 | median premium Rs 14.9 | bid reached +15% within 20 min: 58%
+    5 min        train  -3.9% t -5.0 win  38% | test  -3.4% t -3.4 win  36%
+    10 min       train  -4.8% t -3.8 win  37% | test  -4.7% t -2.9 win  34%
+    15 min       train  -4.1% t -2.7 win  37% | test  -6.3% t -3.3 win  33%
+    +10/-10 10m  train  -3.5% t-10.0 win  42% | test  -3.6% t-11.3 win  41%
+    +20/-10 15m  train  -3.6% t -8.5 win  29% | test  -3.5% t -8.1 win  29%
+    +20/-15 20m  train  -4.7% t -8.4 win  36% | test  -4.2% t -8.0 win  37%
+buy burst: trades train 439 / test 527 | median premium Rs 30.3 | bid reached +15% within 20 min: 58%
+    5 min        train  -2.8% t -1.8 win  38% | test  -6.2% t -3.5 win  35%
+    10 min       train  -3.8% t -1.7 win  40% | test  -8.6% t -4.2 win  37%
+    15 min       train  -1.5% t -0.5 win  37% | test -11.1% t -3.9 win  33%
+    +10/-10 10m  train  -3.4% t -6.0 win  39% | test  -4.8% t-10.0 win  35%
+    +20/-10 15m  train  -3.2% t -4.2 win  27% | test  -3.8% t -5.8 win  28%
+    +20/-15 20m  train  -4.1% t -4.4 win  34% | test  -4.9% t -5.5 win  34%
+writers cover: trades train 836 / test 997 | median premium Rs 19.4 | bid reached +15% within 20 min: 62%
+    5 min        train  -2.4% t -1.8 win  38% | test  -4.4% t -4.2 win  37%
+    10 min       train  -1.5% t -0.5 win  38% | test  -7.1% t -5.1 win  37%
+    15 min       train  -3.0% t -0.9 win  32% | test  -3.3% t -0.8 win  36%
+    +10/-10 10m  train  -3.2% t -8.4 win  42% | test  -3.2% t -8.6 win  41%
+    +20/-10 15m  train  -3.0% t -5.7 win  30% | test  -3.6% t -7.6 win  29%
+    +20/-15 20m  train  -3.4% t -5.2 win  39% | test  -3.9% t -6.0 win  37%
+turn+cover: trades train 132 / test 187 | median premium Rs 9.9 | bid reached +15% within 20 min: 70%
+    5 min        train  -6.9% t -2.2 win  37% | test  -2.4% t -0.6 win  35%
+    10 min       train  -3.8% t -0.5 win  33% | test  -4.0% t -0.7 win  37%
+    15 min       train  -1.2% t -0.1 win  30% | test  -3.7% t -0.5 win  37%
+    +10/-10 10m  train  -5.0% t -5.1 win  36% | test  -4.7% t -5.3 win  39%
+    +20/-10 15m  train  -4.1% t -3.1 win  29% | test  -3.7% t -3.1 win  29%
+    +20/-15 20m  train  -5.5% t -3.4 win  35% | test  -3.5% t -2.3 win  39%
+
+######## SENSEX: fallen options on expiry days, 5 lots, avg return per trade (day-weighted)
+every 5 min: trades train 288 / test 2777 | median premium Rs 67.8 | bid reached +15% within 20 min: 60%
+    5 min        train  -3.9% t -2.5 win  38% | test  -2.7% t -4.1 win  41%
+    10 min       train  -2.2% t -0.5 win  37% | test  -3.9% t -4.9 win  36%
+    15 min       train  -7.1% t -1.9 win  33% | test  -5.4% t -5.1 win  34%
+    +10/-10 10m  train  -2.6% t -4.3 win  44% | test  -3.4% t-15.8 win  41%
+    +20/-10 15m  train  -3.3% t -4.0 win  30% | test  -3.4% t-13.6 win  29%
+    +20/-15 20m  train  -5.2% t -4.8 win  34% | test  -4.4% t-14.3 win  35%
+flush: trades train 208 / test 2006 | median premium Rs 35.0 | bid reached +15% within 20 min: 63%
+    5 min        train  -5.0% t -2.3 win  40% | test  -4.6% t -7.6 win  38%
+    10 min       train  -2.9% t -0.4 win  32% | test  -7.1% t -7.1 win  35%
+    15 min       train -14.0% t -4.2 win  30% | test  -8.2% t -6.3 win  33%
+    +10/-10 10m  train  -4.7% t -7.0 win  41% | test  -4.1% t-15.3 win  42%
+    +20/-10 15m  train  -4.1% t -4.3 win  30% | test  -4.0% t-11.5 win  29%
+    +20/-15 20m  train  -5.8% t -4.5 win  36% | test  -4.5% t-11.3 win  37%
+turn: trades train 181 / test 1784 | median premium Rs 26.9 | bid reached +15% within 20 min: 56%
+    5 min        train  -8.0% t -3.0 win  26% | test  -5.6% t -7.4 win  32%
+    10 min       train  -7.5% t -2.9 win  33% | test  -4.2% t -2.0 win  31%
+    15 min       train -10.4% t -2.9 win  31% | test  -5.8% t -2.4 win  31%
+    +10/-10 10m  train  -4.5% t -6.6 win  44% | test  -5.0% t-17.0 win  41%
+    +20/-10 15m  train  -6.5% t -5.6 win  24% | test  -4.6% t-12.9 win  29%
+    +20/-15 20m  train  -6.4% t -4.5 win  36% | test  -5.6% t-12.6 win  36%
+flush+turn: trades train 148 / test 1479 | median premium Rs 29.4 | bid reached +15% within 20 min: 58%
+    5 min        train  -7.3% t -2.2 win  32% | test  -5.6% t -6.4 win  33%
+    10 min       train  -7.9% t -2.1 win  34% | test  -4.5% t -1.9 win  32%
+    15 min       train  -9.6% t -2.1 win  28% | test  -5.7% t -2.0 win  30%
+    +10/-10 10m  train  -4.3% t -5.2 win  45% | test  -4.8% t-14.8 win  42%
+    +20/-10 15m  train  -5.3% t -4.0 win  28% | test  -4.8% t-10.9 win  29%
+    +20/-15 20m  train  -5.6% t -3.3 win  36% | test  -5.7% t-10.2 win  36%
+buy burst: trades train 89 / test 709 | median premium Rs 83.6 | bid reached +15% within 20 min: 58%
+    5 min        train -10.9% t -3.9 win  31% | test  -3.5% t -1.8 win  34%
+    10 min       train -17.7% t -3.9 win  27% | test  -4.1% t -1.1 win  33%
+    15 min       train -22.2% t -4.1 win  21% | test  -5.6% t -1.5 win  33%
+    +10/-10 10m  train  -5.1% t -3.7 win  35% | test  -4.6% t-11.1 win  38%
+    +20/-10 15m  train  -4.3% t -2.5 win  27% | test  -4.5% t -8.3 win  27%
+    +20/-15 20m  train  -5.2% t -2.0 win  36% | test  -5.9% t -9.0 win  33%
+writers cover: trades train 89 / test 1003 | median premium Rs 57.0 | bid reached +15% within 20 min: 64%
+    5 min        train -11.0% t -3.6 win  28% | test  -4.6% t -5.2 win  36%
+    10 min       train  -5.4% t -0.6 win  34% | test  -3.9% t -2.8 win  35%
+    15 min       train  -5.1% t -0.6 win  29% | test  -6.3% t -3.8 win  33%
+    +10/-10 10m  train  -4.8% t -4.1 win  36% | test  -3.4% t -9.6 win  43%
+    +20/-10 15m  train  -3.7% t -2.4 win  29% | test  -3.2% t -6.8 win  30%
+    +20/-15 20m  train  -4.6% t -1.8 win  38% | test  -3.9% t -6.9 win  38%
+turn+cover: trades train 22 / test 222 | median premium Rs 12.6 | bid reached +15% within 20 min: 59%
+    5 min        train  -7.8% t -2.2 win  27% | test  -1.9% t -0.4 win  29%
+    10 min       train  -1.6% t -0.1 win  27% | test  -7.7% t -1.3 win  26%
+    15 min       train  -6.1% t -0.4 win  27% | test  -7.5% t -0.8 win  27%
+    +10/-10 10m  train  -7.6% t -3.3 win  36% | test  -8.8% t-11.8 win  32%
+    +20/-10 15m  train  -5.6% t -1.6 win  32% | test  -7.8% t -7.8 win  25%
+    +20/-15 20m  train  -9.1% t -2.2 win  32% | test  -9.3% t -7.7 win  30%
