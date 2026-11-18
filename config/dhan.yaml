@@ -1,0 +1,112 @@
+# Scanner settings for the Dhan OpenAlgo instance. Alerts only: no orders are placed.
+name: dhan
+
+openalgo:
+  host: http://127.0.0.1:5001
+  ws_url: ws://127.0.0.1:8765
+  api_key_env: OPENALGO_API_KEY      # put the key in env/dhan.env, never in this file
+
+notify:
+  telegram_username: "chetan"        # your OpenAlgo login username (Telegram bot must be running + /link done)
+  min_interval_sec: 2
+
+underlyings:
+  - {name: NIFTY,  index_exchange: NSE_INDEX, fo_exchange: NFO}
+  - {name: SENSEX, index_exchange: BSE_INDEX, fo_exchange: BFO}
+
+session:
+  wake: "08:45"
+  start: "09:15"
+  expected_move_at: "09:20"          # ATM straddle at this minute = the day's expected move
+  flatten: "15:20"                   # no alerts after this
+  end: "15:31"
+  eval_interval_sec: 5
+
+universe:
+  strike_count: 15                   # strikes each side of ATM, CE and PE
+  recenter_minutes: 15
+  recenter_strikes: 4                # fetch new strikes once spot drifts this many strikes
+  expiry_only: true                  # scanners run only on that index's expiry day (use --any-day to test)
+
+risk:
+  R: 1500                            # rupees risked per idea; used to size the suggested plans
+
+regime:
+  confirm_min: 3                     # a new regime must hold 3 minutes (chaos/breakout switch at once)
+  trend_frac: 0.6                    # move from open >= 0.6 x expected move -> trend
+  range_lookback_min: 60
+  range_frac: 0.25                   # last 60 min range <= 0.25 x expected move -> candidate range
+  straddle_decay_pct: 3.0            # ATM straddle must have lost >= 3% over 30 min
+  wall_band_pct: 1.5                 # OI walls must be within 1.5% of spot
+  breakout_after: "14:30"
+  breakout_lookback_min: 45
+  breakout_expansion: 1.5
+  chaos_vix_jump_pct: 8.0
+  chaos_spread_pct: 3.0
+
+s1:                                  # morning fall-bounce (buy) - no edge in the 2021-2026 backtest
+  enabled: false
+  window: ["09:30", "12:30"]
+  max_itm_at_open: 5
+  min_drop_pct: 50
+  min_red_5m: 3
+  min_bounce_pct: 3
+  min_premium: 30
+  max_spread_pct: 1.5
+  require_index_turn: true
+  stop_buffer_pct: 2                 # stop = low minus the larger of 2% and 1x the option's avg 1m range
+  stop_atr_mult: 1.0
+  initial_pct: 60
+  cooldown_min: 10
+  max_alerts_per_day: 4
+
+s2:                                  # late expiry burst (buy cheap OTM) - no edge in the 2021-2026 backtest
+  enabled: false
+  window: ["14:30", "15:12"]
+  max_otm: 4
+  premium_min: 3
+  premium_max: 15
+  rise_lookback_min: 3
+  min_rise_pct: 30
+  min_vol_ratio: 2
+  budget_per_try: 1500
+  max_tries: 2
+
+s3:                                  # quiet-decay iron fly (sell). PAPER: no robust out-of-sample edge yet
+  enabled: true
+  paper: true                        # alerts say PAPER; the journal grades them for a forward test
+  window: ["11:00", "13:30"]          # first moment in this window when both conditions below hold
+  exit: "15:15"
+  wing_strikes: 3                    # wings 3 strikes out (NIFTY 150 pts, SENSEX 300 pts)
+  range_lookback_min: 60
+  range_mult: 0.5                    # index range of the last 60 min <= 0.5 x ATM straddle (quiet)
+  decay_lookback_min: 30
+  min_decay_pct: 3                   # ATM straddle down >= 3% over the last 30 min (decaying)
+  leg_stop_pct: 50                   # each short leg: buy back (with its wing) at +50%; other leg's stop -> cost
+  max_spread_pct: 2
+  max_loss_rs: 6000                  # lots = this / max loss per lot (wing width - credit)
+  max_alerts_per_day: 1
+
+harvest:                             # Weekend VRP Harvester (scalper/harvest.py) - the one rule set with a test-period edge
+  enabled: true
+  paper: true                        # alerts + journal only; no order is ever placed
+  capital_rs: 1000000                # paper account; set to the capital you would really use
+  risk_pct: 1.0                      # max loss per position (wing width - credit) as % of paper equity
+  max_open_risk_pct: 2.5             # NIFTY and SENSEX positions overlap; total max loss cap
+  pause_drawdown_pct: 6.0            # stop new entries after this paper drawdown (backtest worst: ~3% at 1% risk)
+  dte_entry: 4                       # enter with exactly 4 sessions left to the weekly expiry (holidays counted)
+  entry_time: "15:22"                # entry check (IST); gives you ~7 minutes to place it by hand
+  mark_time: "15:25"                 # daily mark; on expiry day the position is closed here
+  deadline: "15:29"
+  vix_lookback: 250                  # India VIX must be >= median of its previous 250 daily 15:25 values
+  vix_min_days: 120
+  max_vix_age_days: 10               # VIX history comes from tools\run_data_update.ps1
+  wing_mult: 2.0                     # wings = 2 x straddle away, 4..10 strikes
+  min_wing: 4
+  max_wing: 10
+  max_spread_cost_pct: 5             # skip if the 4 legs' bid/ask spreads cost > 5% of the credit
+  events: []                         # e.g. ["2026-06-05 RBI policy", "2026-07-23 Union Budget"]; shown in alerts, not a filter
+
+paths:
+  data_dir: data
+  journal: data/journal.sqlite
